@@ -1,15 +1,115 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="Digitalvisitkort">
+  <!-- Alt indhold ovenpå billedet -->
+  <section class="grid grid-cols-12 gap-0 md:gap-4 mx-5 md:mx-16">
+    <Heading
+      htmlheading="h1"
+      size="large"
+      font="display"
+      stylingclasses="col-span-full text-right leading-[0.90] mr-[5%]"
+    >
+      <span class="whitespace-nowrap"> Maria Xia </span>
+      <span> Egedal </span>
+    </Heading>
+
+    <!-- Cirklen: Hvem er jeg -->
+    <div
+      class="col-start-1 col-end-4 justify-self-center -mt-[clamp(2rem,9cqw,12rem)]"
+    >
+      <div
+        class="w-[clamp(5rem,22cqw,28rem)] aspect-square rounded-full bg-primary-500 flex items-center justify-center"
+      >
+        <Text teksttype="samllCirkel"> HVEM ER<br />JEG?</Text>
+      </div>
+    </div>
+
+    <!-- Info om mig -->
+    <div class="col-start-1 col-end-4 mt-20">
+      <div class="flex-col text-center">
+        <Heading htmlheading="h4" size="xsmall" font="display">22 år</Heading>
+        <Text teksttype="meta">2. juli 2003</Text>
+
+        <Heading
+          htmlheading="h4"
+          size="xsmall"
+          font="display"
+          stylingclasses="mt-[12%]"
+          >Uddannelse
+        </Heading>
+        <Text teksttype="meta"
+          >HF – Rudolf Steiner <br />Skolen Kvistgård<br />[2020–2022]</Text
+        >
+        <Text teksttype="meta" stylingclasses="mt-6">
+          Multimedie<br />­­designer – EK<br />[August 2024 –<br />dags dato]</Text
+        >
+
+        <Heading
+          htmlheading="h4"
+          size="xsmall"
+          font="display"
+          stylingclasses="mt-[12%]"
+        >
+          Værktøjer
+        </Heading>
+
+        <img
+          src="/img/værktøjer.svg"
+          alt="Adobe Illustrator"
+          class="block mx-auto mt-3"
+        />
+
+        <Heading
+          htmlheading="h4"
+          size="xsmall"
+          font="display"
+          stylingclasses="mt-[12%]"
+        >
+          Kontakt mig
+        </Heading>
+        <Text teksttype="meta"> +45&nbsp;22&nbsp;25&nbsp;33&nbsp;17</Text>
+        <Link
+          href="mailto:mariaegedal@gmail.com"
+          subject="Kontakt fra portfolio"
+        >
+          mariaegedal@gmail.com
+        </Link>
+      </div>
+    </div>
+
+    <!-- Cirkelen: Seneste opgaver -->
+    <div class="col-start-7 col-end-13 justify-self-center px-2">
+      <div
+        class="w-[130%] max-w-[clamp(40rem,58cqw,60rem)]
+           aspect-square rounded-full bg-primary-500
+           flex items-center justify-center"
+      >
+        <div class="text-center">
+          <Heading htmlheading="h3" size="small" font="display"
+            >Seneste opgaver</Heading
+          >
+          <Text teksttype="bigCirkel">Av, Min Guldtand – Festival</Text>
+          <Text teksttype="bigCirkel">Pleasant Urban Sun – Tøj</Text>
+          <Text teksttype="bigCirkel">WeShelter – Hjælpeplatform</Text>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rolle + beskrivelse -->
+    <div class="col-start-6 col-end-13 self-start">
+      <Heading htmlheading="h2" size="medium" font="display">
+        Multimediedesigner
+      </Heading>
+      <Text teksttype="brødtekst">
+        Kreativ multimediedesigner-studerende på EK med fokus på kreativitet,
+        digitalt design og gode brugeroplevelser.
+      </Text>
+    </div>
+  </section>
 </MainLayout>

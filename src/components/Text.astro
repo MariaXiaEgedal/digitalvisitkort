@@ -1,0 +1,16 @@
+---
+// Henter parametrene fra Astro.props
+const { teksttype = "brødtekst", stylingclasses = "" } = Astro.props;
+
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
+const sizeClasses = {
+  brødtekst: "max-w-[50ch] text-white text-[clamp(2.6rem,2.8cqw,1.8rem)] mt-4",
+  meta: "text-white text-xs text-sm sm:text-base md:text-base lg:text-base xl:text-xl",
+  bigCirkel:
+    "mt-2 text-white text-sm sm:text-base md:text-xl lg:text-2xl xl:text-4xl",
+  samllCirkel:
+    "text-white text-center italic text-[clamp(0.1rem,2.6cqw,2.4rem)]",
+};
+---
+
+<p class:list={[sizeClasses[teksttype], stylingclasses]}><slot /></p>

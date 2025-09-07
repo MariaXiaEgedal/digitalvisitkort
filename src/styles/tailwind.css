@@ -1,12 +1,39 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
 
+@font-face {
+  font-family: "AbrilFatface";
+  src: url("/fonts/AbrilFatface-Regular.ttf") format("truetype");
+}
+
+/* Inter – variable, normal */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+/* Inter – variable, italic */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-style: italic;
+}
+
 @theme {
   /* Her tilføjes theme variable // tokens */
+
+  /*Farver */
+  --color-primary-500: #f6bebc;
+  --color-secondary-500: #c48e8d;
+
+  /*Typografi */
+  --font-display: "AbrilFatface", serif; /* til overskrifter */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif; /* brødtekst */
 }
 
 @layer base {
@@ -19,9 +46,7 @@
   }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
 }

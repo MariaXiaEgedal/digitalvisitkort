@@ -1,6 +1,83 @@
 ---
+import Link from "../components/Link.astro";
+
+const links = {
+  facebook: "https://www.facebook.com/profile.php?id=100013755789824",
+  instagram: "https://www.instagram.com/maria.egedal/?hl=da",
+  linkedin: "https://www.linkedin.com/in/maria-xia-egedal-9a22b8244/",
+};
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
-</div>
-  
+
+<section
+  class="grid grid-cols-12 items-center mx-5 md:mx-16
+           py-[clamp(6px,1.5cqw,12px)] [container-type:inline-size]"
+>
+  <div
+    class="col-start-1 col-end-9 flex items-center gap-[clamp(0.6rem,2cqw,1rem)]"
+  >
+    <div class="flex items-center gap-[clamp(0.6rem,2cqw,1rem)]">
+      <Link
+        href={links.facebook}
+        target="_blank"
+        ariaLabel="Facebook"
+        class="no-underline"
+      >
+        <img
+          src="/img/face.svg"
+          alt="Facebook"
+          class="h-[clamp(1.8rem,5cqw,2.8rem)] w-auto"
+        />
+      </Link>
+
+      <Link
+        href={links.instagram}
+        target="_blank"
+        ariaLabel="Instagram"
+        class="no-underline"
+      >
+        <img
+          src="/img/insta.svg"
+          alt="Instagram"
+          class="h-[clamp(1.8rem,5cqw,2.8rem)] w-auto"
+        />
+      </Link>
+
+      <Link
+        href={links.linkedin}
+        target="_blank"
+        ariaLabel="LinkedIn"
+        class="no-underline"
+      >
+        <img
+          src="/img/in.svg"
+          alt="LinkedIn"
+          class="h-[clamp(1.8rem,5cqw,2.8rem)] w-auto"
+        />
+        <img src="/img/hover-in.svg" alt="" />
+      </Link>
+    </div>
+
+    <p
+      class="ml-[clamp(0.5rem,2cqw,1.25rem)] font-display text-[clamp(1.1rem,3.2cqw,1.8rem)] text-white"
+    >
+      ByXia.dk · August 2025
+    </p>
+  </div>
+
+  <!-- Højre: “by XIA” -->
+  <p
+    class="col-start-9 col-end-13 justify-self-end
+              flex items-baseline gap-[0.4em] leading-none"
+  >
+    <span
+      class="font-display text-white
+                   text-[clamp(0.9rem,2.4cqw,1.2rem)]"
+      >by</span
+    >
+    <span
+      class="font-display uppercase text-white
+                   text-[clamp(1.6rem,5cqw,2.6rem)]"
+      >XIA</span
+    >
+  </p>
+</section>

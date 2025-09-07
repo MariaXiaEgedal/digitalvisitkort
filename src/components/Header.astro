@@ -1,5 +1,59 @@
 ---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<header x-data="{ showmenu: false }" class="sticky z-50">
+  <div>
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-4">
+        <li class="">
+          <a
+            href="/"
+            class={currentPath === "" ? "underline text-white" : " text-white"}
+            >Forside</a
+          >
+        </li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+        <li class="">
+          <a
+            href="/komponentbibliotek/"
+            class={currentPath === "komponentbibliotek/"
+              ? "underline text-white"
+              : " text-white"}>Komponentbibliotek</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
+      >Menu</button
+    >
+  </div>
+
+  <!-- Mobil -->
+  <nav
+    id="mobilmenu"
+    class="flex flex-col content-center"
+    x-show="showmenu"
+    x-transition
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+  >
+    <ul class="border-t-2 border-b-2 border-white">
+      <li class="text-center py-2">
+        <a
+          href="/"
+          class={currentPath === "" ? "font-bold text-white" : " text-white"}
+          >Forside</a
+        >
+      </li>
+      <li class="text-center py-2">
+        <a
+          href="/komponentbibliotek/"
+          class={currentPath === "komponentbibliotek/"
+            ? "font-bold text-white"
+            : ""}>Komponentbibliotek</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
