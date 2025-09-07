@@ -8,7 +8,7 @@ import Heading from "../components/Heading.astro";
 
 <MainLayout title="Digitalvisitkort">
   <!-- Alt indhold ovenpå billedet -->
-  <section class="grid grid-cols-12 gap-0 md:gap-4 mx-5 md:mx-16">
+  <section class="grid grid-cols-12 gap-0 md:gap-4 mx-[3%] md:mx-[5%]">
     <Heading
       htmlheading="h1"
       size="large"
@@ -31,7 +31,7 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <!-- Info om mig -->
-    <div class="col-start-1 col-end-4 mt-20">
+    <div class="col-start-1 col-end-4 mt-10 md:mt-10">
       <div class="flex-col text-center">
         <Heading htmlheading="h4" size="xsmall" font="display">22 år</Heading>
         <Text teksttype="meta">2. juli 2003</Text>
@@ -102,7 +102,9 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <!-- Rolle + beskrivelse -->
-    <div class="col-start-6 col-end-13 self-start">
+    <div
+      class="col-start-7 col-end-13 self-start md:-mt-50 lg:-mt-30 xl:-mt-10"
+    >
       <Heading htmlheading="h2" size="medium" font="display">
         Multimediedesigner
       </Heading>

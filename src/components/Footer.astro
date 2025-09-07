@@ -8,52 +8,85 @@ const links = {
 };
 ---
 
-<section
-  class="grid grid-cols-12 items-center mx-5 md:mx-16
-           py-[clamp(6px,1.5cqw,12px)] [container-type:inline-size]"
->
+<section class="grid grid-cols-12 items-centermx-[3%] md:mx-[5%] mt-20 mb-5">
   <div
     class="col-start-1 col-end-9 flex items-center gap-[clamp(0.6rem,2cqw,1rem)]"
   >
     <div class="flex items-center gap-[clamp(0.6rem,2cqw,1rem)]">
+      <!-- Facebook -->
       <Link
         href={links.facebook}
         target="_blank"
         ariaLabel="Facebook"
         class="no-underline"
       >
-        <img
-          src="/img/face.svg"
-          alt="Facebook"
-          class="h-[clamp(1.8rem,5cqw,2.8rem)] w-auto"
-        />
+        <span
+          class="group relative block h-[clamp(1.8rem,5cqw,2.8rem)] w-[clamp(1.8rem,5cqw,2.8rem)]"
+        >
+          <img
+            src="/img/face.svg"
+            alt="Facebook"
+            class="absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ease-out group-hover:opacity-0"
+          />
+          <img
+            src="/img/hover-face.svg"
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-100"
+          />
+        </span>
       </Link>
 
+      <!-- Instagram -->
       <Link
         href={links.instagram}
         target="_blank"
         ariaLabel="Instagram"
         class="no-underline"
       >
-        <img
-          src="/img/insta.svg"
-          alt="Instagram"
-          class="h-[clamp(1.8rem,5cqw,2.8rem)] w-auto"
-        />
+        <span
+          class="group relative block h-[clamp(1.8rem,5cqw,2.8rem)] w-[clamp(1.8rem,5cqw,2.8rem)]"
+        >
+          <img
+            src="/img/insta.svg"
+            alt="Instagram"
+            class="absolute inset-0 h-full w-full object-contain
+             transition-opacity duration-200 ease-out group-hover:opacity-0"
+          />
+          <img
+            src="/img/hover-insta.svg"
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-contain
+             opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-100"
+          />
+        </span>
       </Link>
 
+      <!-- LinkedIn -->
       <Link
         href={links.linkedin}
         target="_blank"
         ariaLabel="LinkedIn"
         class="no-underline"
       >
-        <img
-          src="/img/in.svg"
-          alt="LinkedIn"
-          class="h-[clamp(1.8rem,5cqw,2.8rem)] w-auto"
-        />
-        <img src="/img/hover-in.svg" alt="" />
+        <span
+          class="group relative block h-[clamp(1.8rem,5cqw,2.8rem)] w-[clamp(1.8rem,5cqw,2.8rem)]"
+        >
+          <img
+            src="/img/in.svg"
+            alt="LinkedIn"
+            class="absolute inset-0 h-full w-full object-contain
+             transition-opacity duration-200 ease-out group-hover:opacity-0"
+          />
+          <img
+            src="/img/hover-in.svg"
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-contain
+             opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-100"
+          />
+        </span>
       </Link>
     </div>
 
