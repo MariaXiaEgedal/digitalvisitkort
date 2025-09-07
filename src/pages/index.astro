@@ -31,7 +31,9 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <!-- Info om mig -->
-    <div class="col-start-1 col-end-4 mt-10 md:mt-10">
+    <div
+      class="col-start-9 col-end-12 md:col-start-1 md:col-end-4 mt-10 md:mt-10"
+    >
       <div class="flex-col text-center">
         <Heading htmlheading="h4" size="xsmall" font="display">22 år</Heading>
         <Text teksttype="meta">2. juli 2003</Text>
@@ -84,11 +86,16 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <!-- Cirkelen: Seneste opgaver -->
-    <div class="col-start-7 col-end-13 justify-self-center px-2">
+    <div
+      class="col-start-1 col-end-12 md:col-start-7 md:col-end-13 justify-self-center -mt-[clamp(23rem,22cqw,28rem)] md:mt-0 -ml-25 px-2"
+    >
       <div
-        class="w-[130%] max-w-[clamp(40rem,58cqw,60rem)]
-           aspect-square rounded-full bg-primary-500
-           flex items-center justify-center"
+        class="w-full
+      max-w-[clamp(1rem,70cqw,28rem)] /* mobil-størrelse */
+      md:max-w-[clamp(36rem,58cqw,72rem)] /* desktop-størrelse */
+      aspect-square rounded-full overflow-hidden
+      bg-primary-500 flex items-center justify-center
+      p-[clamp(1rem,3cqw,2rem)]"
       >
         <div class="text-center">
           <Heading htmlheading="h3" size="small" font="display"
@@ -100,10 +107,9 @@ import Heading from "../components/Heading.astro";
         </div>
       </div>
     </div>
-
     <!-- Rolle + beskrivelse -->
     <div
-      class="col-start-7 col-end-13 self-start md:-mt-50 lg:-mt-30 xl:-mt-10"
+      class="col-start-2 col-end-12 self-start md:col-start-7 md:col-end-13 md:-mt-50 lg:-mt-30 xl:-mt-10"
     >
       <Heading htmlheading="h2" size="medium" font="display">
         Multimediedesigner
